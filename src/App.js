@@ -485,9 +485,6 @@ class App extends Component {
   calcTokenBalancesDeFiMainnet = async () => {
     const web3 = window.web3;
 
-    const nftTokenBalanceRes = await this.state.NFTTokenContract.methods.balanceOf(this.state.account).call();
-    const nftTokenBalance = web3.utils.fromWei(nftTokenBalanceRes, "ether");
-
     const defiTokenBalanceRes = await this.state.DeFiTokenContract.methods.balanceOf(this.state.account).call();
     const defiTokenBalance = web3.utils.fromWei(defiTokenBalanceRes, "ether");
 
@@ -1340,7 +1337,7 @@ class App extends Component {
                     <Card.Description>
                       <p style={{ color: "#C0C0C0" }}>Rate: In return of investing 1 BNB you will receive 1 META Token.</p>
 
-                      <Form onSubmit={this.investNFTMainnetMainnet}>
+                      <Form onSubmit={this.investNFTMainnet}>
                         <Input style={{ width: "300px", padding: 3 }} required type="text" placeholder="BNB amount to create" name="nftToMintMainnet" onChange={this.handleInputChange}></Input>
                         <Button color="green" type="submit" style={{ margin: "20px", width: "150px" }}>Create</Button>
                       </Form>
