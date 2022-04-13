@@ -842,7 +842,6 @@ class App extends Component {
     const defiTokenBalanceRes = await this.state.DeFiTokenContract2.methods.balanceOf(this.state.account).call();
     const defiTokenBalance = web3.utils.fromWei(defiTokenBalanceRes, "ether");
     
-
     const btcTokenBalanceRes = await this.state.SwapContract2.methods.btcBalance(this.state.account).call();
     const helperBtc = await this.getExchangeRate(btcTokenBalanceRes, "0x4b1851167f74FF108A994872A160f1D6772d474b");
     const btcTokenBalanceBnb = web3.utils.fromWei(helperBtc, "ether");
@@ -1025,7 +1024,7 @@ class App extends Component {
               <Card style={{ width: "900px" }}>
                 <Card.Content style={{ background: "#406ccd" }}>
                 <Card.Header style={{ color: "white" }}>
-                  <p style={{ color: "#C0C0C0", "font-weight": "bold", "text-align": "right" }}>APY: 12%</p>
+                  <p style={{ color: "#C0C0C0", "font-weight": "bold", "text-align": "right" }}>APY: XX%</p>
                     Top 10 Tokens
                     </Card.Header>
                   <Card.Description>
@@ -1123,7 +1122,7 @@ class App extends Component {
               <Card style={{ width: "900px" }}>
                 <Card.Content style={{ background: "#406ccd" }}>
                 <Card.Header style={{ color: "white" }}>
-                    <p style={{ color: "#C0C0C0", "font-weight": "bold", "text-align": "right" }}>APY: 8%</p>
+                    <p style={{ color: "#C0C0C0", "font-weight": "bold", "text-align": "right" }}>APY: YY%</p>
                     Top 10 Metaverse Tokens
                     </Card.Header>
                   <Card.Description>
