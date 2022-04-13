@@ -188,7 +188,7 @@ class App extends Component {
     await this.loadWeb3();
     await this.loadBlockchainData();
     //await this.getRate();
-    swal("This project is is beta stage");
+    swal("The project is in the alpha stage, proceed at your own risk");
 
     const web3 = window.web3;
     const chainIdDec = await web3.eth.getChainId();
