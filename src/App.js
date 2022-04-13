@@ -1051,7 +1051,7 @@ class App extends Component {
                         <Table.Row>
                           <Table.Cell style={{ color: "#C0C0C0" }}>Top10 Token</Table.Cell>
                           <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.defiTokenBalance}</Table.Cell>
-                          <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.defiTokenBalance}</Table.Cell>
+                          <Table.Cell style={{ color: "#C0C0C0" }}>-</Table.Cell>
                         </Table.Row>
                         <Table.Row>
                           <Table.Cell style={{ color: "#C0C0C0" }}>Bitcoin (BTC)</Table.Cell>
@@ -1149,7 +1149,7 @@ class App extends Component {
                         <Table.Row>
                           <Table.Cell style={{ color: "#C0C0C0" }}>Metaverse Token</Table.Cell>
                           <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.nftTokenBalance}</Table.Cell>
-                          <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.nftTokenBalance}</Table.Cell>
+                          <Table.Cell style={{ color: "#C0C0C0" }}>-</Table.Cell>
                         </Table.Row>
                         <Table.Row>
                           <Table.Cell style={{ color: "#C0C0C0" }}>Axie Infinity (AXS)</Table.Cell>
@@ -1263,7 +1263,7 @@ class App extends Component {
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>Top10 Token</Table.Cell>
                             <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.defiTokenBalance}</Table.Cell>
-                            <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.defiTokenBalance}</Table.Cell>
+                            <Table.Cell style={{ color: "#C0C0C0" }}>-</Table.Cell>
                           </Table.Row>
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>Bitcoin (BTC)</Table.Cell>
@@ -1360,7 +1360,7 @@ class App extends Component {
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>Metaverse Token</Table.Cell>
                             <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.nftTokenBalance}</Table.Cell>
-                            <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.nftTokenBalance}</Table.Cell>
+                            <Table.Cell style={{ color: "#C0C0C0" }}>-</Table.Cell>
                           </Table.Row>
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>Axie Infinity (AXS)</Table.Cell>
