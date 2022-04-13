@@ -489,73 +489,53 @@ class App extends Component {
     const defiTokenBalance = web3.utils.fromWei(defiTokenBalanceRes, "ether");
 
     // DeFi
-    const BTCTokenConntract = new web3.eth.Contract(IERC.abi, "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c");
     const btcTokenBalanceRes = await this.state.SwapContract.methods.btcBalance(this.state.account).call();
-    //const btcTokenBalanceRes = await BTCTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperBtc = await this.getExchangeRateMainnet(btcTokenBalanceRes, "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c");
     const btcTokenBalanceBnb = web3.utils.fromWei(helperBtc, "ether");
     const btcTokenBalance = web3.utils.fromWei(btcTokenBalanceRes, "ether");
 
-    const ETHTokenConntract = new web3.eth.Contract(IERC.abi, "0x2170Ed0880ac9A755fd29B2688956BD959F933F8");
     const ethTokenBalanceRes = await this.state.SwapContract.methods.ethBalance(this.state.account).call();
-    //const ethTokenBalanceRes = await ETHTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperEth = await this.getExchangeRateMainnet(ethTokenBalanceRes, "0x2170Ed0880ac9A755fd29B2688956BD959F933F8");
     const ethTokenBalanceBnb = web3.utils.fromWei(helperEth, "ether");
     const ethTokenBalance = web3.utils.fromWei(ethTokenBalanceRes, "ether");
 
-    const SHIBATokenConntract = new web3.eth.Contract(IERC.abi, "0x2859e4544C4bB03966803b044A93563Bd2D0DD4D");
     const shibaTokenBalanceRes = await this.state.SwapContract.methods.shibaBalance(this.state.account).call();
-    //const shibaTokenBalanceRes = await SHIBATokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperShib = await this.getExchangeRateMainnet(shibaTokenBalanceRes, "0x2859e4544C4bB03966803b044A93563Bd2D0DD4D");
     const shibaTokenBalanceBnb = web3.utils.fromWei(helperShib, "ether");
     const shibaTokenBalance = web3.utils.fromWei(shibaTokenBalanceRes, "ether");
 
-    const XRPTokenConntract = new web3.eth.Contract(IERC.abi, "0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE");
     const xrpTokenBalanceRes = await this.state.SwapContract.methods.xrpBalance(this.state.account).call();
-    //const xrpTokenBalanceRes = await XRPTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperXrp = await this.getExchangeRateMainnet(xrpTokenBalanceRes, "0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE");
     const xrpTokenBalanceBnb = web3.utils.fromWei(helperXrp, "ether");
     const xrpTokenBalance = web3.utils.fromWei(xrpTokenBalanceRes, "ether");
 
-    const LTCTokenConntract = new web3.eth.Contract(IERC.abi, "0x4338665CBB7B2485A8855A139b75D5e34AB0DB94");
     const ltcTokenBalanceRes = await this.state.SwapContract.methods.ltcBalance(this.state.account).call();
-    //const ltcTokenBalanceRes = await LTCTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperLtc = await this.getExchangeRateMainnet(ltcTokenBalanceRes, "0x4338665CBB7B2485A8855A139b75D5e34AB0DB94");
     const ltcTokenBalanceBnb = web3.utils.fromWei(helperLtc, "ether");
     const ltcTokenBalance = web3.utils.fromWei(ltcTokenBalanceRes, "ether");
 
-    const DAITokenConntract = new web3.eth.Contract(IERC.abi, "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3");
     const daiTokenBalanceRes = await this.state.SwapContract.methods.daiBalance(this.state.account).call();
-    //const daiTokenBalanceRes = await DAITokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperDai = await this.getExchangeRateMainnet(daiTokenBalanceRes, "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3");
     const daiTokenBalanceBnb = web3.utils.fromWei(helperDai, "ether");
     const daiTokenBalance = web3.utils.fromWei(daiTokenBalanceRes, "ether");
 
-    const MAKERTokenConntract = new web3.eth.Contract(IERC.abi, "0x5f0Da599BB2ccCfcf6Fdfd7D81743B6020864350");
     const makerTokenBalanceRes = await this.state.SwapContract.methods.makerBalance(this.state.account).call();
-    //const makerTokenBalanceRes = await MAKERTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperMaker = await this.getExchangeRateMainnet(makerTokenBalanceRes, "0x5f0Da599BB2ccCfcf6Fdfd7D81743B6020864350");
     const makerTokenBalanceBnb = web3.utils.fromWei(helperMaker, "ether");
     const makerTokenBalance = web3.utils.fromWei(makerTokenBalanceRes, "ether");
 
-    const LINKTokenConntract = new web3.eth.Contract(IERC.abi, "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD");
     const linkTokenBalanceRes = await this.state.SwapContract.methods.linkBalance(this.state.account).call();
-    //const linkTokenBalanceRes = await LINKTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperLink = await this.getExchangeRateMainnet(linkTokenBalanceRes, "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD");
     const linkTokenBalanceBnb = web3.utils.fromWei(helperLink, "ether");
     const linkTokenBalance = web3.utils.fromWei(linkTokenBalanceRes, "ether");
 
-    const UNITokenConntract = new web3.eth.Contract(IERC.abi, "0xBf5140A22578168FD562DCcF235E5D43A02ce9B1");
     const uniTokenBalanceRes = await this.state.SwapContract.methods.uniBalance(this.state.account).call();
-    //const uniTokenBalanceRes = await UNITokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperUni = await this.getExchangeRateMainnet(uniTokenBalanceRes, "0xBf5140A22578168FD562DCcF235E5D43A02ce9B1");
     const uniTokenBalanceBnb = web3.utils.fromWei(helperUni, "ether");
     const uniTokenBalance = web3.utils.fromWei(uniTokenBalanceRes, "ether");
 
 
-    const AAVETokenConntract = new web3.eth.Contract(IERC.abi, "0xfb6115445Bff7b52FeB98650C87f44907E58f802");
     const aaveTokenBalanceRes = await this.state.SwapContract.methods.aaveBalance(this.state.account).call();
-    //const aaveTokenBalanceRes = await AAVETokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperAave = await this.getExchangeRateMainnet(aaveTokenBalanceRes, "0xfb6115445Bff7b52FeB98650C87f44907E58f802");
     const aaveTokenBalanceBnb = web3.utils.fromWei(helperAave, "ether");
     const aaveTokenBalance = web3.utils.fromWei(aaveTokenBalanceRes, "ether");
@@ -577,41 +557,34 @@ class App extends Component {
     const nftTokenBalanceRes = await this.state.NFTTokenContract.methods.balanceOf(this.state.account).call();
     const nftTokenBalance = web3.utils.fromWei(nftTokenBalanceRes, "ether");
 
-    const AXSTokenConntract = new web3.eth.Contract(IERC.abi, "0x715D400F88C167884bbCc41C5FeA407ed4D2f8A0");
     const axsTokenBalanceRes = await this.state.NFTPortfolioContract.methods.axsBalance(this.state.account).call();
-    //const axsTokenBalanceRes = await AXSTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperAxs = await this.getExchangeRateMainnet(axsTokenBalanceRes, "0x715D400F88C167884bbCc41C5FeA407ed4D2f8A0");
     const axsTokenBalanceBnb = web3.utils.fromWei(helperAxs, "ether");
     const axsTokenBalance = web3.utils.fromWei(axsTokenBalanceRes, "ether");
+    console.log("axs", axsTokenBalance);
 
-    const RACATokenConntract = new web3.eth.Contract(IERC.abi, "0x12BB890508c125661E03b09EC06E404bc9289040");
     const racaTokenBalanceRes = await this.state.NFTPortfolioContract.methods.racaBalance(this.state.account).call();
-    //const racaTokenBalanceRes = await RACATokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperRaca = await this.getExchangeRateMainnet(racaTokenBalanceRes, "0x12BB890508c125661E03b09EC06E404bc9289040");
     const racaTokenBalanceBnb = web3.utils.fromWei(helperRaca, "ether");
     const racaTokenBalance = web3.utils.fromWei(racaTokenBalanceRes, "ether");
+    console.log("raca", racaTokenBalance);
 
-    const MBOXTokenConntract = new web3.eth.Contract(IERC.abi, "0x3203c9E46cA618C8C1cE5dC67e7e9D75f5da2377");
     const mboxTokenBalanceRes = await this.state.NFTPortfolioContract.methods.mboxBalance(this.state.account).call();
-    //const mboxTokenBalanceRes = await MBOXTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperMbox = await this.getExchangeRateMainnet(mboxTokenBalanceRes, "0x3203c9E46cA618C8C1cE5dC67e7e9D75f5da2377");
     const mboxTokenBalanceBnb = web3.utils.fromWei(helperMbox, "ether");
     const mboxTokenBalance = web3.utils.fromWei(mboxTokenBalanceRes, "ether");
+    console.log("mbox", mboxTokenBalance);
 
-    const MCTokenConntract = new web3.eth.Contract(IERC.abi, "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6");
     const mcTokenBalanceRes = await this.state.NFTPortfolioContract.methods.mcBalance(this.state.account).call();
-    //const mcTokenBalanceRes = await MCTokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
-    const helperMc = await this.getExchangeRateMainnet(mcTokenBalanceRes, "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6");
-    const mcTokenBalanceBnb = web3.utils.fromWei(helperMc, "ether");
+    //const helperMc = await this.getExchangeRateMainnet(mcTokenBalanceRes, "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6");
+    const mcTokenBalanceBnb = web3.utils.fromWei(mcTokenBalanceRes, "ether");
     const mcTokenBalance = web3.utils.fromWei(mcTokenBalanceRes, "ether");
+    console.log("mc", mcTokenBalance);
 
-    const ALICETokenConntract = new web3.eth.Contract(IERC.abi, "0xAC51066d7bEC65Dc4589368da368b212745d63E8");
     const aliceTokenBalanceRes = await this.state.NFTPortfolioContract.methods.aliceBalance(this.state.account).call();
-    //const aliceTokenBalanceRes = await ALICETokenConntract.methods.balanceOf("0x6056773C28c258425Cf9BC8Ba5f86B8031863164").call();
     const helperAlice = await this.getExchangeRateMainnet(aliceTokenBalanceRes, "0xAC51066d7bEC65Dc4589368da368b212745d63E8");
     const aliceTokenBalanceBnb = web3.utils.fromWei(helperAlice, "ether");
     const aliceTokenBalance = web3.utils.fromWei(aliceTokenBalanceRes, "ether");
-   
 
     this.setState({
       nftTokenBalance,
@@ -1223,7 +1196,7 @@ class App extends Component {
       }
       
       let mainnet;
-      if(this.state.chainId == "56") {
+      if(this.state.chainId != "97") {
         mainnet = 
         <div>
         <Grid divided='vertically'>
@@ -1380,7 +1353,7 @@ class App extends Component {
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>Merit Circle (MC)</Table.Cell>
                             <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.mcTokenBalance}</Table.Cell>
-                            <Table.Cell style={{ color: "#C0C0C0" }}>{this.state.mcTokenBalanceBnb}</Table.Cell>
+                            <Table.Cell style={{ color: "#C0C0C0" }}>-</Table.Cell>
                           </Table.Row>
                           <Table.Row>
                             <Table.Cell style={{ color: "#C0C0C0" }}>MyNeighborAlice (ALICE)</Table.Cell>
