@@ -14,7 +14,7 @@ import IERC from "./abis/IERC20.json";
 import pancakeSwapRouter from "./abis/IPancakeRouter02.json";
 import detectEthereumProvider from '@metamask/detect-provider';
 import Web3 from 'web3';
-import { Grid, Button, Card, Form, Input, Image, Dropdown, Table } from 'semantic-ui-react';
+import { Grid, Button, Card, Form, Input, Image, Message, Table } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import velvet from "./velvet.png";
 import metamask from "./metamask-fox.svg";
@@ -188,7 +188,7 @@ class App extends Component {
     await this.loadWeb3();
     await this.loadBlockchainData();
     //await this.getRate();
-    swal("The project is in the alpha stage, proceed at your own risk");
+    //swal("The project is in the alpha stage, proceed at your own risk");
 
     const web3 = window.web3;
     const chainIdDec = await web3.eth.getChainId();
@@ -976,12 +976,12 @@ class App extends Component {
 
     let button;
     if (!this.state.connected) {
-      button = <Button style={{ position: "absolute", top: "30px", right: "20px" }} onClick={this.connectWallet} color="orange">
+      button = <Button style={{ position: "absolute", top: "60px", right: "20px" }} onClick={this.connectWallet} color="orange">
           <Image style={{ "padding-top": "7px" }} floated="left" size="mini" src={metamask} />
           <p>Connect to MetaMask</p>
         </Button>
     } else {
-      button = <p style={{ position: "absolute", top: "90px", right: "20px", color: "#C0C0C0" }}><b>Account:</b> {this.state.account}</p>
+      button = <p style={{ position: "absolute", top: "110px", right: "20px", color: "#C0C0C0" }}><b>Account:</b> {this.state.account}</p>
     }
 
     let testnet;
@@ -1190,7 +1190,7 @@ class App extends Component {
 
       let buttonSwitch;
       if(this.state.chainId == "56" && this.state.connected) {
-        buttonSwitch = <Button style={{ position: "absolute", top: "30px", right: "20px" }} onClick={() => this.handleNetworkSwitch("bscTestnet")} color="orange" type="submit" >Change to Testnet</Button>
+        buttonSwitch = <Button style={{ position: "absolute", top: "60px", right: "20px" }} onClick={() => this.handleNetworkSwitch("bscTestnet")} color="orange" type="submit" >Change to Testnet</Button>
       } else if (this.state.connected) {
         buttonSwitch = <Button style={{ position: "absolute", top: "30px", right: "20px" }} onClick={() => this.handleNetworkSwitch("bsc")} color="orange" type="submit" >Change to Mainnet</Button>
       }
@@ -1377,10 +1377,14 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div>
+        <Message negative>
+          <Message.Header>The project is in the alpha stage, proceed at your own risk.</Message.Header>
+        </Message>
+      </div>
         <br></br>
 
         <Image src={velvet} size="medium" verticalAlign='middle'></Image>
-
 
         {button}
         {buttonSwitch}
