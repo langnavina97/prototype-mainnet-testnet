@@ -19,6 +19,7 @@ import 'semantic-ui-css/semantic.min.css';
 import velvet from "./velvet.png";
 import metamask from "./metamask-fox.svg";
 import swal from 'sweetalert';
+import ReactGA from 'react-ga';
 
 import "./App.css";
 
@@ -422,7 +423,7 @@ class App extends Component {
     .send({from: this.state.account});
 
 
-    var amount = withdrawAmountInWei / 10;
+    var amount = withdrawAmountInWei;
     var sAmount = amount.toString();
 
     await this.state.SwapContract.methods.withdrawFromFundTOPTokens(sAmount
@@ -453,7 +454,7 @@ class App extends Component {
       await this.state.NFTTokenContract.methods.approve("0x40A367c5320440a1aa78aCBC5af0A017Ed1F3772", "7787357773333787487837458347754874574837458374")
       .send({from: this.state.account});
   
-      var amount = withdrawAmountInWei / 10;
+      var amount = withdrawAmountInWei;
       var sAmount = amount.toString();
   
       await this.state.NFTPortfolioContract.methods.withdrawFromFundNFT(sAmount
